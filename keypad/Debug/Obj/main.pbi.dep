@@ -1,0 +1,7 @@
+main.pbi: \
+  D:\Engineering\Collage\Senior-1\Microcontrollers\ and\ Interfacing\Labs\keypad\main.c \
+  D:\Engineering\Collage\Senior-1\Microcontrollers\ and\ Interfacing\Labs\keypad/tm4c123gh6pm.h \
+  D:\Engineering\Collage\Senior-1\Microcontrollers\ and\ Interfacing\Labs\keypad/Port_INIT.h \
+  D:\Engineering\Collage\Senior-1\Microcontrollers\ and\ Interfacing\Labs\keypad/Fsm.h \
+  D:\IAR\ Cortex-M\ edition\arm\inc\c\stdbool.h \
+  D:\Engineering\Collage\Senior-1\Microcontrollers\ and\ Interfacing\Labs\keypad/Systick_Timer.h

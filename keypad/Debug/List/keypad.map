@@ -1,0 +1,203 @@
+###############################################################################
+#
+# IAR ELF Linker V8.40.1.212/W32 for ARM                  30/Oct/2019  14:49:55
+# Copyright 2007-2019 IAR Systems AB.
+#
+#    Output file  =
+#        D:\Engineering\Collage\Senior-1\Microcontrollers and
+#        Interfacing\Labs\keypad\Debug\Exe\keypad.out
+#    Map file     =
+#        D:\Engineering\Collage\Senior-1\Microcontrollers and
+#        Interfacing\Labs\keypad\Debug\List\keypad.map
+#    Command line =
+#        -f C:\Users\Hazem\AppData\Local\Temp\EWA6FF.tmp
+#        ("D:\Engineering\Collage\Senior-1\Microcontrollers and
+#        Interfacing\Labs\keypad\Debug\Obj\Fsm.o"
+#        "D:\Engineering\Collage\Senior-1\Microcontrollers and
+#        Interfacing\Labs\keypad\Debug\Obj\main.o"
+#        "D:\Engineering\Collage\Senior-1\Microcontrollers and
+#        Interfacing\Labs\keypad\Debug\Obj\Port_INIT.o"
+#        "D:\Engineering\Collage\Senior-1\Microcontrollers and
+#        Interfacing\Labs\keypad\Debug\Obj\Systick_Timer.o" --no_out_extension
+#        -o "D:\Engineering\Collage\Senior-1\Microcontrollers and
+#        Interfacing\Labs\keypad\Debug\Exe\keypad.out" --redirect
+#        _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb --map
+#        "D:\Engineering\Collage\Senior-1\Microcontrollers and
+#        Interfacing\Labs\keypad\Debug\List\keypad.map" --config "D:\IAR
+#        Cortex-M edition\arm\CONFIG\generic_cortex.icf" --semihosting --entry
+#        __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because some modules are built with
+size limitations (and not runtime checking), and --advanced_heap
+was not specified.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x0 { ro section .intvec };
+"P1":  place in [from 0x0 to 0x7'ffff] { ro };
+define block CSTACK with size = 1K, alignment = 8 { };
+define block PROC_STACK with size = 0, alignment = 8 { };
+define block HEAP with size = 2K, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2000'ffff] {
+          rw, block CSTACK, block PROC_STACK, block HEAP };
+
+  Section          Kind         Address   Size  Object
+  -------          ----         -------   ----  ------
+"A0":                                     0x40
+  .intvec          ro code          0x0   0x40  vector_table_M.o [3]
+                                 - 0x40   0x40
+
+"P1":                                    0x298
+  .text            ro code         0x40  0x104  main.o [1]
+  .text            ro code        0x144   0xbc  Port_INIT.o [1]
+  .text            ro code        0x200   0x10  Systick_Timer.o [1]
+  .text            ro code        0x210   0x3a  zero_init3.o [3]
+  .text            ro code        0x24a    0x2  vector_table_M.o [3]
+  .text            ro code        0x24c   0x28  data_init.o [3]
+  .iar.init_table  const          0x274   0x10  - Linker created -
+  .text            ro code        0x284   0x1e  cmain.o [3]
+  .text            ro code        0x2a2    0x4  low_level_init.o [2]
+  .text            ro code        0x2a6    0x4  exit.o [2]
+  .text            ro code        0x2ac    0xa  cexit.o [3]
+  .text            ro code        0x2b8   0x14  exit.o [4]
+  .text            ro code        0x2cc    0xc  cstartup_M.o [3]
+  .rodata          const          0x2d8    0x0  zero_init3.o [3]
+                                - 0x2d8  0x298
+
+"P2", part 1 of 2:                         0x8
+  .bss             zero     0x2000'0000    0x8  main.o [1]
+                          - 0x2000'0008    0x8
+
+"P2", part 2 of 2:                       0x400
+  CSTACK                    0x2000'0008  0x400  <Block>
+    CSTACK         uninit   0x2000'0008  0x400  <Block tail>
+                          - 0x2000'0408  0x400
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+        0x2d8     0x7'ffff  0x7'fd28
+  0x2000'0408  0x2000'ffff    0xfbf8
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x8:
+          0x2000'0000   0x8
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module            ro code  ro data  rw data
+    ------            -------  -------  -------
+command line/config:
+    -------------------------------------------
+    Total:
+
+D:\Engineering\Collage\Senior-1\Microcontrollers and Interfacing\Labs\keypad\Debug\Obj: [1]
+    Port_INIT.o           188
+    Systick_Timer.o        16
+    main.o                260                 8
+    -------------------------------------------
+    Total:                464                 8
+
+dl7M_tln.a: [2]
+    exit.o                  4
+    low_level_init.o        4
+    -------------------------------------------
+    Total:                  8
+
+rt7M_tl.a: [3]
+    cexit.o                10
+    cmain.o                30
+    cstartup_M.o           12
+    data_init.o            40
+    vector_table_M.o       66
+    zero_init3.o           58
+    -------------------------------------------
+    Total:                216
+
+shb_l.a: [4]
+    exit.o                 20
+    -------------------------------------------
+    Total:                 20
+
+    Gaps                    4
+    Linker created                  16    1'024
+-----------------------------------------------
+    Grand Total:          712       16    1'032
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address  Size  Type      Object
+-----                       -------  ----  ----      ------
+.iar.init_table$$Base         0x274         --   Gb  - Linker created -
+.iar.init_table$$Limit        0x284         --   Gb  - Linker created -
+?main                         0x285        Code  Gb  cmain.o [3]
+CSTACK$$Base            0x2000'0008         --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'0408         --   Gb  - Linker created -
+Configure_SysTick             0x201   0xc  Code  Gb  Systick_Timer.o [1]
+PORTA_init                    0x175  0x2a  Code  Gb  Port_INIT.o [1]
+PORTB_init                    0x145  0x30  Code  Gb  Port_INIT.o [1]
+PORTD_init                    0x19f  0x2a  Code  Gb  Port_INIT.o [1]
+Region$$Table$$Base           0x274         --   Gb  - Linker created -
+Region$$Table$$Limit          0x284         --   Gb  - Linker created -
+__cmain                       0x285        Code  Gb  cmain.o [3]
+__exit                        0x2b9  0x14  Code  Gb  exit.o [4]
+__iar_data_init3              0x24d  0x28  Code  Gb  data_init.o [3]
+__iar_program_start           0x2cd        Code  Gb  cstartup_M.o [3]
+__iar_zero_init3              0x211  0x3a  Code  Gb  zero_init3.o [3]
+__low_level_init              0x2a3   0x4  Code  Gb  low_level_init.o [2]
+__vector_table                  0x0        Data  Gb  vector_table_M.o [3]
+_call_main                    0x291        Code  Gb  cmain.o [3]
+_exit                         0x2ad        Code  Gb  cexit.o [3]
+_main                         0x29f        Code  Gb  cmain.o [3]
+exit                          0x2a7   0x4  Code  Gb  exit.o [2]
+isAnyPressed                   0x59   0x8  Code  Gb  main.o [1]
+key                     0x2000'0000   0x8  Data  Gb  main.o [1]
+keyIdent                       0x8f  0xaa  Code  Gb  main.o [1]
+main                           0x41  0x18  Code  Gb  main.o [1]
+whichCol                       0x61  0x2e  Code  Gb  main.o [1]
+
+
+[1] = D:\Engineering\Collage\Senior-1\Microcontrollers and Interfacing\Labs\keypad\Debug\Obj
+[2] = dl7M_tln.a
+[3] = rt7M_tl.a
+[4] = shb_l.a
+
+    712 bytes of readonly  code memory
+     16 bytes of readonly  data memory
+  1'032 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
